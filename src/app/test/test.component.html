@@ -1,0 +1,13 @@
+
+    <!-- No templates provided, will use default layout -->
+    <app-bad-table [data]="employees"></app-bad-table>
+    <!-- Basic configured template -->
+    <app-bad-table [data]="employees" [headers]="['First', 'Last']"></app-bad-table>
+    <!-- Highly configured template with conditional elements -->
+    <app-bad-table
+      [data]="inventory"
+      [headers]="['Item', 'Price', '']"
+      [hideRows]="['plu', 'supplier', 'inStock', 'currency']"
+      [actionButtonFn]="actionButtonFn"
+      (actionClicked)="purchaseItem($event)"
+    ></app-bad-table>
